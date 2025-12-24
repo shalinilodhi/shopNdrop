@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vendor Dashboard | ShopNDrop</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+   <nav class="vendor-navbar">
+  <div class="vendor-logo">ShopNDrop</div>
+
+  <ul class="vendor-nav-links">
+    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="orders.html">Orders</a></li>
+    <li><a href="../index.html" class="logout">Logout</a></li>
+  </ul>
+</nav>
+
+    <!-- HERO -->
+  <header class="page-hero">
+    <h1>Vendor Dashboard</h1>
+    <p>Manage your products and orders</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
+
+    <!-- WELCOME -->
+    <div class="card welcome-card">
+      <h3>Welcome, Vendor 👋</h3>
+      <p>Here is an overview of your business.</p>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="card stat-card">
+        <h4>Total Products</h4>
+        <p class="stat-number" id="productCount">3</p>
+      </div>
+
+      <div class="card stat-card">
+        <h4>Total Orders</h4>
+        <p class="stat-number" id="orderCount">5</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+
+</html>

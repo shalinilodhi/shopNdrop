@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | ShopNDrop</title>
+
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Welcome Back 👋</h2>
+    <p>Please login to continue</p>
+
+    <form id="loginForm">
+
+      <!-- ROLE SELECTION (INSIDE CARD) -->
+      <div class="role-select">
+        <label>
+          <input type="radio" name="role" value="vendor" required>
+          Vendor
+        </label>
+        <label>
+          <input type="radio" name="role" value="customer">
+          Customer
+        </label>
+      </div>
+
+      <input type="email" id="email" placeholder="Email address" required />
+      <input type="password" id="password" placeholder="Password" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p class="extra-links">
+      Don’t have an account? <a href="#">Register</a>
+    </p>
+
+    <a href="../index.html" class="back-home">← Back to Home</a>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

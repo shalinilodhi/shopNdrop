@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #43cea2, #185a9d);
+}
+
+.login-container {
+  background: white;
+  padding: 40px;
+  width: 360px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.login-container h2 {
+  color: #1b8f5a;
+  margin-bottom: 6px;
+}
+
+.login-container p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* ROLE SELECT */
+.role-select {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.role-select label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input:focus {
+  border-color: #43cea2;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #1b8f5a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #146b43;
+}
+
+/* LINKS */
+.extra-links {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.extra-links a {
+  color: #1b8f5a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-home {
+  display: block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+}

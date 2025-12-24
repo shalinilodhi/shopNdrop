@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products | Vendor</title>
+  <link rel="stylesheet" href="products.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- VENDOR NAVBAR -->
+<nav class="vendor-navbar">
+  <div class="vendor-logo">ShopNDrop</div>
+  <ul class="vendor-nav-links">
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="orders.html">Orders</a></li>
+    <li><a href="../index.html" class="logout">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <h1>Your Products</h1>
+  <p>Add and manage your products</p>
+</header>
+
+<!-- CONTENT -->
+<main class="page-content">
+
+  <!-- ADD PRODUCT -->
+  <div class="card">
+    <h3>Add Product</h3>
+    <input type="text" id="productName" placeholder="Product name">
+    <input type="number" id="productPrice" placeholder="Price">
+    <button id="addProductBtn">Add Product</button>
+  </div>
+
+  <!-- PRODUCT LIST -->
+  <div class="card">
+    <h3>Product List</h3>
+    <div id="productList" class="product-grid"></div>
+  </div>
+
+</main>
+
+<script src="products.js"></script>
+</body>
+</html>

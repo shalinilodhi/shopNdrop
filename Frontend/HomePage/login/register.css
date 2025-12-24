@@ -1,0 +1,43 @@
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(to right,#43cea2,#185a9d);
+  font-family:Poppins;
+}
+
+.register-container{
+  background:#fff;
+  padding:40px;
+  width:360px;
+  border-radius:18px;
+  text-align:center;
+}
+
+.role-select{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:15px 0;
+}
+
+input,button{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+}
+
+button{
+  background:#1b8f5a;
+  color:#fff;
+  border:none;
+  border-radius:25px;
+}
+
+.link{
+  display:block;
+  margin-top:15px;
+  text-decoration:none;
+  color:#1b8f5a;
+}
