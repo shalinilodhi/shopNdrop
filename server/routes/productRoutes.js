@@ -5,20 +5,23 @@ const router = express.Router();
 
 /**
  * GET /api/products
- * SEARCH + FILTER (FIXED)
+ * SEARCH + FILTER (SAFE & FINAL)
  */
 router.get("/", async (req, res) => {
   try {
     const query = {};
 
-    // 🔍 SEARCH
-    if (req.query.search) {
-      query.name = { $regex: req.query.search, $options: "i" };
+    // 🔍 SEARCH by name
+    if (req.query.search && req.query.search.trim() !== "") {
+      query.name = {
+        $regex: req.query.search.trim(),
+        $options: "i",
+      };
     }
 
-    // 📦 CATEGORY
-    if (req.query.category) {
-      query.category = req.query.category;
+    // 📦 CATEGORY filter
+    if (req.query.category && req.query.category.trim() !== "") {
+      query.category = req.query.category.trim();
     }
 
     // 💰 PRICE FILTER
@@ -26,20 +29,25 @@ router.get("/", async (req, res) => {
       query.price = {};
 
       if (req.query.minPrice) {
-        query.price.$gte = parseInt(req.query.minPrice);
+        query.price.$gte = Number(req.query.minPrice);
       }
 
       if (req.query.maxPrice) {
-        query.price.$lte = parseInt(req.query.maxPrice);
+        query.price.$lte = Number(req.query.maxPrice);
       }
     }
 
     console.log("FINAL QUERY OBJECT 👉", query);
 
-    const products = await Product.find(query);
-    res.json(products);
+    // IMPORTANT: lean() avoids mongoose overhead / hanging
+    const products = await Product.find(query).lean();
+
+    return res.status(200).json(products);
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error("PRODUCT ROUTE ERROR 👉", err);
+    return res.status(500).json({
+      message: "Failed to fetch products",
+    });
   }
 });
 

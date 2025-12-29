@@ -1,0 +1,34 @@
+.customer-dashboard {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+
+.customer-sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.customer-sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.customer-sidebar a {
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.customer-sidebar a:hover {
+  background: #1f2937;
+}
+
+.customer-content {
+  flex: 1;
+  padding: 30px;
+}

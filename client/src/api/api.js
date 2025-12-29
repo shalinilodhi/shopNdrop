@@ -1,17 +1,39 @@
-const API = "http://localhost:5000/api";
+const API_URL = "http://localhost:5000/api";
 
-export const loginUser = (data) =>
-  fetch(`${API}/auth/login`, {
+/* ---------------- PRODUCTS ---------------- */
+
+// supports search & filters later
+export const fetchProducts = async (params = {}) => {
+  const query = new URLSearchParams(params).toString();
+  const res = await fetch(`${API_URL}/products?${query}`);
+  return res.json();
+};
+
+/* ---------------- AUTH ---------------- */
+
+export const loginUser = async (data) => {
+  const res = await fetch(`${API_URL}/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
-  }).then((res) => res.json());
+  });
+  return res.json();
+};
 
-export const fetchProducts = () =>
-  fetch(`${API}/products`).then((res) => res.json());
+export const registerUser = async (data) => {
+  const res = await fetch(`${API_URL}/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+};
 
-export const placeOrder = (token, items) =>
-  fetch(`${API}/orders`, {
+/* ---------------- ORDERS (OPTIONAL – CAN USE LATER) ---------------- */
+
+// safe to keep, even if backend not ready yet
+export const placeOrder = async (token, items) => {
+  const res = await fetch(`${API_URL}/orders`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,3 +41,5 @@ export const placeOrder = (token, items) =>
     },
     body: JSON.stringify({ items }),
   });
+  return res.json();
+};

@@ -1,12 +1,16 @@
+// LOAD ENV FIRST
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
-dotenv.config();
+const app = express();
+
+// CONNECT DATABASE
 connectDB();
 
-const app = express();
+// MIDDLEWARE
 app.use(cors());
 app.use(express.json());
 
@@ -18,17 +22,12 @@ app.get("/", (req, res) => {
 // ROUTES
 console.log("Mounting AUTH routes");
 app.use("/api/auth", require("./routes/authRoutes"));
-
 app.use("/api/products", require("./routes/productRoutes"));
-
 app.use("/api/cart", require("./routes/cartRoutes"));
+app.use("/api/orders", require("./routes/orderRoutes"));
 
-
+// START SERVER
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
-
-const orderRoutes = require("./routes/orderRoutes");
-app.use("/api/orders", orderRoutes);
-
 });

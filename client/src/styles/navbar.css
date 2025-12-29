@@ -1,21 +1,113 @@
 .navbar {
+  height: 64px;
+  background: linear-gradient(135deg, #1f2937, #111827);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 40px;
-  background: #1f2937;
+  padding: 0 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .logo {
-  color: #fff;
-}
-
-.links a {
-  color: #fff;
-  margin-left: 20px;
+  color: #f9fafb;
+  font-size: 22px;
+  font-weight: 700;
   text-decoration: none;
 }
 
-.links a:hover {
-  color: #22c55e;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-right a {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-right a:hover {
+  color: #60a5fa;
+}
+
+.login-btn {
+  background: #2563eb;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white !important;
+}
+
+.logout-btn {
+  background: #ef4444;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+.signup-btn {
+  background: #10b981;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white !important;
+  font-weight: 500;
+}
+
+.signup-btn:hover {
+  background: #059669;
+}
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: white;
+  color: black;
+  width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  z-index: 100;
+}
+
+.profile-dropdown button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.profile-dropdown button:hover {
+  background: #f2f2f2;
+}
+
+.logout-btn {
+  color: red;
+  font-weight: 600;
+}
+
+.profile-email {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 6px;
 }
